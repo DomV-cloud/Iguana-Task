@@ -1,6 +1,8 @@
-﻿namespace DeveloperTest.Models
+﻿using DeveloperTest.Repository;
+
+namespace DeveloperTest.Models
 {
-    public class Invoice
+    public class Invoice: EntityBase
     {
 
 
