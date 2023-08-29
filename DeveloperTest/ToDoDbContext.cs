@@ -1,3 +1,4 @@
+using DeveloperTest.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -7,7 +8,7 @@ public class ToDoDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
 
-    protected ToDoDbContext(IConfiguration configuration)
+    public ToDoDbContext(IConfiguration configuration)
     {
         _configuration = configuration;
     }
@@ -28,6 +29,7 @@ public class ToDoDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
     }
     //entities
 
