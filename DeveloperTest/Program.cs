@@ -6,8 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient<ToDoDbContext>();
 
 builder.Services.AddDbContext<ToDoDbContext>(configure =>
     configure.UseInMemoryDatabase("ToDoDatabase")

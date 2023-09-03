@@ -1,12 +1,18 @@
 using DeveloperTest.Exceptions;
+using DeveloperTest.Exceptions.ExceptionMessages;
+using DeveloperTest.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Text.RegularExpressions;
 
 namespace DeveloperTest;
 
 public class ToDoDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
+    
+
+    public DbSet<Invoice> Groups { get; set; }
 
     public ToDoDbContext(IConfiguration configuration)
     {
@@ -19,7 +25,8 @@ public class ToDoDbContext : DbContext
 
         if (String.IsNullOrEmpty(connectionString))
         {
-            throw new ConnectionIsNotConfigured();
+            throw new ConnectionIsNotConfigured(Message.SQLIsNotConfigured);
+
         }
 
 
@@ -31,6 +38,5 @@ public class ToDoDbContext : DbContext
     {
 
     }
-    //entities
 
 }
