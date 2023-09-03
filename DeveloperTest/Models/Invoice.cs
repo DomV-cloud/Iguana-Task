@@ -11,5 +11,6 @@ namespace DeveloperTest.Models
 
 
         public bool IsPaid { get; set; } = false;
+
     }
 }

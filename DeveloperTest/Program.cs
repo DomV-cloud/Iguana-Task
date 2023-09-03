@@ -13,6 +13,8 @@ builder.Logging.AddConsole();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
 builder.Services.AddTransient<ToDoDbContext>();
 
 builder.Services.AddDbContext<ToDoDbContext>(configure =>
@@ -20,6 +22,9 @@ builder.Services.AddDbContext<ToDoDbContext>(configure =>
         .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning)));
 
 var app = builder.Build();
+
+ConfigurationManager configuration = builder.Configuration; 
+
 
 if (app.Environment.IsDevelopment())
 {

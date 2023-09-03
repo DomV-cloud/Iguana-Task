@@ -21,12 +21,12 @@
             }
             else
             {
-                context.Response.StatusCode = 401; // Unauthorized
+                context.Response.StatusCode = 401; 
                 await context.Response.WriteAsync("Unauthorized");
             }
         }
     }
-    // Extension method used to add the middleware to the HTTP request pipeline.
+
     public static class ApiKeyMiddlewareExtensions
     {
         public static IApplicationBuilder UseApiKeyMiddleware(this IApplicationBuilder builder)

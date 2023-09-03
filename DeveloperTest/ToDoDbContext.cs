@@ -12,7 +12,7 @@ public class ToDoDbContext : DbContext
     private readonly IConfiguration _configuration;
     
 
-    public DbSet<Invoice> Groups { get; set; }
+    public DbSet<Invoice>? Invoices { get; set; }
 
     public ToDoDbContext(IConfiguration configuration)
     {
@@ -34,9 +34,5 @@ public class ToDoDbContext : DbContext
             .EnableSensitiveDataLogging();
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-
-    }
 
 }
